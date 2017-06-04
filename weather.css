@@ -1,0 +1,373 @@
+/* Desktop Size Design */
+
+body{
+	min-height: 100vh;
+	background: linear-gradient(#3C9BC6,#22234C);
+	font-family: 'Open Sans','Roboto', sans-serif;
+	color: white;
+}
+/* header */
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto;
+	padding: 15px 30px 15px 30px;
+	width: 65%;
+}
+/*RHS - blockClass: info */
+.info{
+	display: flex;
+	flex-direction: column;
+}
+
+.line1{
+	display: flex;
+	flex-direction: row;
+	font-size: xx-large;
+}
+
+#date{
+	margin-top: 5px;
+	font-size: 15pt;
+	font-weight: 900;
+}
+
+#time{
+	margin-left: 10px;
+}
+
+/*LHS - blockClass: zip */
+.zip{
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+}
+
+#zipbox{
+	background-color: #C4DDE8;
+	border: none;
+	border-radius: 15px;
+	width: 100px; 
+	padding: 5px;
+}
+
+#submit{
+	background-color: #00B0DC;
+	color: white;
+	border: none;
+	border-radius: 15px;
+	width: 60px;
+	margin: 5px;
+	float: right;
+}
+/* EO header */
+
+#Place{
+	text-align: center;
+	font-size: 30pt;
+	font-weight: bolder;
+}
+
+/* Weather box*/
+#weatherBox{
+	margin: auto;
+	padding: 20px 30px 5px 30px;
+	width: 65%;
+	display: flex;
+	flex-direction: row;
+}
+
+#status_pic{
+	width: 50%;
+}
+
+#box2{
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	text-align: center;
+	align-self: center;
+}
+
+.temperature{
+	display: flex;
+	flex-direction: row;
+	padding-left: 80px;
+}
+
+#temp{
+	font-size: 50pt;
+	font-weight: lighter;
+}
+
+.degree{
+	padding-top: 20px;
+	padding-left: 10px;
+	font-size: large;
+	font-weight: bolder;
+}
+
+#status{
+	font-size: large;
+	padding-left: 40px;
+}
+
+
+#box3{
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+}
+
+.boxContent{
+	display: flex;
+	flex-direction: row;
+}
+
+.hw{
+	width: 25px;
+	height: 30px;
+	padding: 10px;
+}
+
+#wind,#humidity{
+	font-weight: lighter;
+	font-size: large;
+}
+
+/* EO Weather box*/
+
+/* forecast */
+#forecast{
+	display: flex;
+	flex-direction: row;
+
+/*	border-width: 5px;
+	border-color: #aaaa00;
+	border-style: solid; */
+
+	flex-wrap: wrap;	
+	overflow: hidden; 
+	position: relative;
+	justify-content: center;
+	flex-basis: 75%;
+	transition-property: left; 
+	transition-duration: 1s; 
+}
+
+.dayblock{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background-color: #4B7A99;
+	border-radius: 15px;
+	margin: 5px;
+	height: 230px;
+	width: 160px;
+	align-items: center;
+	transition-property: left; 
+	transition-duration: 1s; 
+
+}
+
+.day{
+	margin: 10px;
+	font-size: large;
+}
+
+.imgborder{
+	height: 100px;
+	width: 120px;
+	text-align: center;
+	margin: auto;
+}
+
+.image{
+	width: 70%;
+}
+
+.status{
+	font-size: large;
+	margin: 5px;
+}
+
+.tempBlock{
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+}
+.high_temp{
+	font-weight: bolder;
+	font-size: xx-large;
+}
+
+.low_temp{
+	margin-left: 25px;
+	font-weight: lighter;
+	font-size: xx-large;
+}
+
+/* EO forecast */
+
+/* move_button */
+.move_button{
+	display: flex;
+	flex-direction: row;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.move{
+	background: transparent;
+	border: none;
+}
+
+#back{
+	display: flex;
+	flex-direction: row;
+}
+
+#forward{
+	display: flex;
+	flex-direction: row;
+	margin-left: auto;
+}
+
+.Word{
+	padding: 10px 0px 8px 8px;
+}
+
+.moveImg{
+	height: 30px; 
+	width: 35px;
+}
+/* EO move_button */
+
+footer{
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+/* Mobile Size Design */
+
+.mobile {
+	display: none;
+}
+
+@media (max-width: 480px){
+
+	.mobile {
+		display: inline-flex;
+	}
+
+	#date,.zip,#weatherBox,#back,#forward{
+		display: none;
+	}
+
+	#day1,#day2,#day3,#day4,#day5,#day6,#day7,#day8,#day9{
+		display: none;
+	}
+
+	header{
+		display: flex;
+		flex-direction: column;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+	}
+
+	#zip_mobile{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#zipBox_Mobile{
+		margin: 20px 10px 10px 5px;
+
+	}
+
+	#zipboxMo{
+		background-color: #C4DDE8;
+		border: none;
+		border-radius: 15px;
+		width: 100px; 
+		padding: 5px;
+		width: 120px;
+		height: 20px;
+		font-size: 12pt;
+	}
+
+	#plusBox{
+		align-self: flex-end;
+		/*padding-left:250px;*/
+	}
+
+	#plusImg{
+		height: 60px;
+		width: 70px;
+	}
+
+	.plusBut{
+		background: transparent;
+		border: none;
+	}
+
+	.line1{
+		font-size: 40pt;
+		font-weight: lighter;
+		padding-left: 5px;
+	}
+
+	#Place{
+		text-align: left;
+		font-size: 28pt;
+		padding-top: 10px;
+		padding-left: 5px;
+	}
+
+	#tap{
+		display: flex;
+		flex-direction: row;
+		margin: auto;
+		justify-content: center;
+		font-size: 15pt;
+		padding-top: 20px;
+	}
+
+	#day0{
+		height: 350px;
+		width: 250px;
+	}
+
+	.day{
+		font-size:30pt;
+	}
+
+	.image{
+		width: 100%;
+	}
+
+	.status{
+		padding: 5px;
+		font-size:x-large;
+	}
+
+	.tempBlock{
+		margin: 15px;
+	}
+
+	.high_temp{
+		font-size: 40pt;
+		margin-left: 20px; 
+	}
+
+	.low_temp{
+		margin-left: 50px;
+		font-size: 40pt;
+	}
+}

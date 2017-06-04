@@ -1,0 +1,99 @@
+<!--
+Beginning of Weather App
+
+Also requires files:
+	weather.css
+	weather.js
+-->
+<!doctype HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width"> 
+	<title>Weather App</title>
+	<link rel="stylesheet" type="text/css" href="weather.css"></link> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:300" rel="stylesheet">
+</head>
+
+<body>
+<header>
+
+<div class="mobile" id="zip_mobile" > <!--for mobile size ONLY-->
+	
+	<div id="zipBox_Mobile"> 	<!-- zipcode -->
+		<input id="zipboxMo" type="text" placeholder="enter zip">
+	</div>
+
+	<div id="plusBox"> 			<!-- + -->
+		<button class="plusBut" onclick="getNewPlaceMo()"><img id="plusImg" src="../WeatherApp 3/plus.png"></button>
+	</div>
+
+</div>
+
+<div class="info">	<!--Desktop Version-->
+	<div class = "line1">
+		<div>Today</div> 
+		<div id="time"></div>
+	</div>
+	<div class="line 2" id ="date"></div>
+</div>
+
+<div class="zip">	<!--Desktop Version-->
+	<div><input id="zipbox" type="text" placeholder="enter zip"></div>
+	<div><button id="submit" onclick="getNewPlace()"> submit </button></div>
+</div>
+
+</header>
+
+<div id="Place"></div>
+<div class="mobile" id="tap"> Tap card for more details </div>
+	
+<div id="weatherBox">
+	
+	<div id="box1">
+		<img id="statusPic">
+	</div>
+	
+	<div id="box2">
+		<div class="temperature">
+			<div id="temp"></div>
+			<div class="degree">F</div>
+		</div>
+		<p id="status"></p>
+	</div>
+	
+	<div id="box3">
+		<div class="boxContent">	<!-- humidity -->
+			<img class="hw" src="../WeatherApp 3/drop.png">
+			<p id="humidity"></p>
+		</div>
+		<div class="boxContent">	<!-- wind -->
+			<img class="hw" src="../WeatherApp 3/wind.png">
+			<p id="wind"></p>
+		</div>
+	</div>
+
+</div>
+
+<div id="forecast"></div>
+<div class="move_button">
+	<div id="back">
+		<div><button class="move" onclick="buttonAction(-1)"><img class="moveImg"  src="../WeatherApp 3/arrow-left.png"></button></div>
+		<div class="Word">previous forecasts</div>
+	</div>
+	<div id="forward">
+		<div class="Word">more forecasts</div>
+		<div><button class="move" onclick="buttonAction(1)"><img class="moveImg" src="../WeatherApp 3/arrow-right.png"></button></div>
+	</div>
+</div>
+
+<footer><img src="https://poweredby.yahoo.com/white.png"></footer>
+
+<!-- contains callback function that is called when weather gets here from server --> 
+<script src="weather.js"></script>
+
+<!-- asks server to send weather -->
+<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='davis, ca')&format=json&callback=callbackFunction"></script>
+
+</body>
+</html>
